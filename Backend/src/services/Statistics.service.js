@@ -92,7 +92,7 @@ async function getPrediction(user_id) {
 }
 
 async function getUserStatistics() {
-  const [users] = await pool.promise().execute("SELECT id, name FROM users LIMIT 3");
+ const [users] = await pool.promise().execute("SELECT id, name FROM users");
   const results = [];
   function delay(ms) { return new Promise(res => setTimeout(res, ms)); }
   for (const user of users) {
